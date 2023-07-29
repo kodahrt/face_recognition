@@ -8,7 +8,7 @@ import cv2
 # specific demo. If you have trouble installing it, try any of the other demos that don't require it instead.
 
 # Open the input movie file
-input_movie = cv2.VideoCapture("hamilton_clip.mp4")
+input_movie = cv2.VideoCapture("face_recognition\examples\hamilton_clip.mp4")
 length = int(input_movie.get(cv2.CAP_PROP_FRAME_COUNT))
 
 # Create an output movie file (make sure resolution/frame rate matches input video!)
@@ -16,10 +16,10 @@ fourcc = cv2.VideoWriter_fourcc(*'XVID')
 output_movie = cv2.VideoWriter('output.avi', fourcc, 29.97, (640, 360))
 
 # Load some sample pictures and learn how to recognize them.
-lmm_image = face_recognition.load_image_file("lin-manuel-miranda.png")
+lmm_image = face_recognition.load_image_file("face_recognition\examples\lin-manuel-miranda.png")
 lmm_face_encoding = face_recognition.face_encodings(lmm_image)[0]
 
-al_image = face_recognition.load_image_file("alex-lacamoire.png")
+al_image = face_recognition.load_image_file("face_recognition\examples\ex-lacamoire.png")
 al_face_encoding = face_recognition.face_encodings(al_image)[0]
 
 known_faces = [
